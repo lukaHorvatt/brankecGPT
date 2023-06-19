@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="words">
+            <div class="word" id="word1" onclick="connect('word1')">Quercus</div>
+            <div class="word" id="word2" onclick="connect('word2')">Fraxinus</div>
+            <div class="word" id="word3" onclick="connect('word3')">Pinus</div>
+        </div>
+
+        <div id="images">
+            <div class="image" id="image1" onclick="connect('image1')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Fraxinus_lanuginosa_f._serrata_1.JPG/1280px-Fraxinus_lanuginosa_f._serrata_1.JPG" alt="Ash Leaf">
+            </div>
+            <div class="image" id="image2" onclick="connect('image2')">
+                <img src="https://www.collinsdictionary.com/images/full/pineneedle_73547599_1000.jpg?version=4.0.312" alt="Pine Leaf">
+            </div>
+            <div class="image" id="image3" onclick="connect('image3')">
+                <img src="https://swbiodiversity.org/imglib/seinet/midwest/IND_Observations/202206/B18ECBB1-D739-47CD-9A41-882ECA_1654430632.jpg" alt="Oak Leaf">
+            </div>
+        </div>
+    </div>
+
+    <button onclick="checkConnections()">Check Connections</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

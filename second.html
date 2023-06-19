@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="words">
+            <div class="word" id="athlete1" onclick="connect('athlete1')">Soccer Player</div>
+            <div class="word" id="athlete2" onclick="connect('athlete2')">Gymnast</div>
+            <div class="word" id="athlete3" onclick="connect('athlete3')">Mountain Biker</div>
+        </div>
+
+        <div id="images">
+            <div class="image" id="sport1" onclick="connect('sport1')">
+                <img src="https://example.com/soccer.jpg" alt="Soccer">
+            </div>
+            <div class="image" id="sport2" onclick="connect('sport2')">
+                <img src="https://example.com/gymnastics.jpg" alt="Gymnastics">
+            </div>
+            <div class="image" id="sport3" onclick="connect('sport3')">
+                <img src="https://example.com/mountain_biking.jpg" alt="Mountain Biking">
+            </div>
+        </div>
+    </div>
+
+    <button onclick="checkConnectionsSecond()">Check Connections</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
