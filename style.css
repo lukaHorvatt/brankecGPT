@@ -64,3 +64,43 @@
     height: 50px;
     font-size: 16px;
 }
+
+#title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#title h1 {
+    font-size: 30px;
+}
+
+#title h2 {
+    font-size: 20px;
+}body {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.result-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#result {
+    text-align: center;
+    font-size: 48px;
+    padding: 20px;
+    background-color: lightyellow;
+    border: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#result h1 {
+    margin: 10px;
+}

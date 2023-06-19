@@ -3,23 +3,31 @@ var instance = jsPlumb.getInstance();
 
 // Define correct connections
 var correctConnections = {
+    "sport1": "image1",
+    "sport2": "image2",
+    "sport3": "image3"
+};
+
+// Define correct connections for second page
+var correctConnectionsSecond = {
     "word1": "image3",
     "word2": "image1",
     "word3": "image2"
 };
 
-// Define correct connections for second page
-var correctConnectionsSecond = {
-    "athlete1": "sport1",
-    "athlete2": "sport2",
-    "athlete3": "sport3"
+// Define correct connections for third page
+var correctConnectionsThird = {
+    "procedure1": "meal1",
+    "procedure2": "meal2",
+    "procedure3": "meal3"
 };
 
 // Store the last clicked div
 var lastClicked;
 
 // Store the current page
-var currentPage = window.location.pathname.includes('second.html') ? 'second' : 'first';
+var currentPage = window.location.pathname.includes('second.html') ? 'second' : 
+                  window.location.pathname.includes('third.html') ? 'third' : 'first';
 
 // Connect divs
 function connect(id) {
@@ -37,6 +45,8 @@ function connect(id) {
                 checkConnections(connection, lastClicked, id);
             } else if (currentPage === 'second') {
                 checkConnectionsSecond(connection, lastClicked, id);
+            } else if (currentPage === 'third') {
+                checkConnectionsThird(connection, lastClicked, id);
             }
             lastClickedElement.style.border = '';
             lastClicked = null;
@@ -88,6 +98,28 @@ function checkConnectionsSecond(connection, sourceId, targetId) {
         if (correctCount === Object.keys(correctConnectionsSecond).length) {
             var modal = document.createElement('div');
             modal.innerHTML = '<div id="modal"><p>Congratulations!</p><button onclick="location.href=\'third.html\'">Go Next</button></div>';
+            document.body.appendChild(modal);
+        }
+    }
+}
+
+
+// Check connections for third page
+function checkConnectionsThird(connection, sourceId, targetId) {
+    if (correctConnectionsThird[sourceId] !== targetId) {
+        alert("Incorrect connection between " + sourceId + " and " + targetId);
+        instance.deleteConnection(connection);
+    } else {
+        var connections = instance.getAllConnections();
+        var correctCount = 0;
+        for (var i = 0; i < connections.length; i++) {
+            if (correctConnectionsThird[connections[i].sourceId] === connections[i].targetId) {
+                correctCount++;
+            }
+        }
+        if (correctCount === Object.keys(correctConnectionsThird).length) {
+            var modal = document.createElement('div');
+            modal.innerHTML = '<div id="modal"><p>Congratulations!</p><button onclick="location.href=\'fourth.html\'">Go Next</button></div>';
             document.body.appendChild(modal);
         }
     }

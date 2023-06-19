@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Kulinarsko znanje</h1>
+        <h2>Na kraju dana, ljubav ide kroz želudac a ti si kuhar. Da vidimo koliko dobar?</h2>
+    </div>
+    <div id="container">
+        <div id="words">
+            <div class="word" id="procedure1" onclick="connect('procedure1')">Procedure 1</div>
+            <div class="word" id="procedure2" onclick="connect('procedure2')">Procedure 2</div>
+            <div class="word" id="procedure3" onclick="connect('procedure3')">Procedure 3</div>
+        </div>
+
+        <div id="images">
+            <div class="image" id="meal1" onclick="connect('meal1')">
+                <img src="https://example.com/meal1.jpg" alt="Meal 1">
+            </div>
+            <div class="image" id="meal2" onclick="connect('meal2')">
+                <img src="https://example.com/meal2.jpg" alt="Meal 2">
+            </div>
+            <div class="image" id="meal3" onclick="connect('meal3')">
+                <img src="https://example.com/meal3.jpg" alt="Meal 3">
+            </div>
+        </div>
+    </div>
+
+    <button onclick="checkConnectionsThird()">Check Connections</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
