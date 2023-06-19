@@ -3,8 +3,8 @@ var instance = jsPlumb.getInstance();
 
 // Define correct connections
 var correctConnections = {
-    "sport1": "image1",
-    "sport2": "image2",
+    "sport1": "image2",
+    "sport2": "image1",
     "sport3": "image3"
 };
 
@@ -17,9 +17,9 @@ var correctConnectionsSecond = {
 
 // Define correct connections for third page
 var correctConnectionsThird = {
-    "procedure1": "meal1",
-    "procedure2": "meal2",
-    "procedure3": "meal3"
+    "procedure1": "meal3",
+    "procedure2": "meal1",
+    "procedure3": "meal2"
 };
 
 // Store the last clicked div
@@ -51,20 +51,20 @@ function connect(id) {
             lastClickedElement.style.border = '';
             lastClicked = null;
         } else {
-            alert("You can only connect words to images!");
+            alert("Samo lijevo na desno se spaja! :) ");
             lastClickedElement.style.border = '';
             lastClicked = null;
         }
     } else {
         lastClicked = id;
-        clickedElement.style.border = '1px solid red';
+        clickedElement.style.border = '3px solid green';
     }
 }
 
 // Check connections
 function checkConnections(connection, sourceId, targetId) {
     if (correctConnections[sourceId] !== targetId) {
-        alert("Incorrect connection between " + sourceId + " and " + targetId);
+        tempAlert("Nope, pokusaj ponovo!",1200);
         instance.deleteConnection(connection);
     } else {
         var connections = instance.getAllConnections();
@@ -76,7 +76,7 @@ function checkConnections(connection, sourceId, targetId) {
         }
         if (correctCount === Object.keys(correctConnections).length) {
             var modal = document.createElement('div');
-            modal.innerHTML = '<div id="modal"><p>Congratulations!</p><button onclick="location.href=\'second.html\'">Go Next</button></div>';
+            modal.innerHTML = '<div id="modal"><p>Bravo, idemo dalje!</p><button onclick="location.href=\'second.html\'">DALJE</button></div>';
             document.body.appendChild(modal);
         }
     }
@@ -85,7 +85,7 @@ function checkConnections(connection, sourceId, targetId) {
 // Check connections for second page
 function checkConnectionsSecond(connection, sourceId, targetId) {
     if (correctConnectionsSecond[sourceId] !== targetId) {
-        alert("Incorrect connection between " + sourceId + " and " + targetId);
+        tempAlert("Nope, pokusaj ponovo!",1200);
         instance.deleteConnection(connection);
     } else {
         var connections = instance.getAllConnections();
@@ -97,7 +97,7 @@ function checkConnectionsSecond(connection, sourceId, targetId) {
         }
         if (correctCount === Object.keys(correctConnectionsSecond).length) {
             var modal = document.createElement('div');
-            modal.innerHTML = '<div id="modal"><p>Congratulations!</p><button onclick="location.href=\'third.html\'">Go Next</button></div>';
+            modal.innerHTML = '<div id="modal"><p>Bravo, idemo dalje!</p><button onclick="location.href=\'third.html\'">DALJE</button></div>';
             document.body.appendChild(modal);
         }
     }
@@ -107,7 +107,7 @@ function checkConnectionsSecond(connection, sourceId, targetId) {
 // Check connections for third page
 function checkConnectionsThird(connection, sourceId, targetId) {
     if (correctConnectionsThird[sourceId] !== targetId) {
-        alert("Incorrect connection between " + sourceId + " and " + targetId);
+        tempAlert("Nope, pokusaj ponovo!",1200);
         instance.deleteConnection(connection);
     } else {
         var connections = instance.getAllConnections();
@@ -119,8 +119,20 @@ function checkConnectionsThird(connection, sourceId, targetId) {
         }
         if (correctCount === Object.keys(correctConnectionsThird).length) {
             var modal = document.createElement('div');
-            modal.innerHTML = '<div id="modal"><p>Congratulations!</p><button onclick="location.href=\'fourth.html\'">Go Next</button></div>';
+            document.location.href="result.html";
             document.body.appendChild(modal);
         }
+        
     }
+}
+
+function tempAlert(msg,duration)
+{
+ var el = document.createElement("div");
+ el.setAttribute("style","position:absolute;top:40%;left:40%;background-color:white;color:red;font-size:32px;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },duration);
+ document.body.appendChild(el);
 }

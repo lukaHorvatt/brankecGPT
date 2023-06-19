@@ -4,27 +4,29 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div id="title">
+        <h1>Sportsko znanje!</h1>
+        <h2>Poveži ime sportaša sa pripadajućom slikom na desnoj strani</h2>
+    </div>
     <div id="container">
         <div id="words">
-            <div class="word" id="sport1" onclick="connect('sport1')">Soccer</div>
-            <div class="word" id="sport2" onclick="connect('sport2')">Basketball</div>
-            <div class="word" id="sport3" onclick="connect('sport3')">Tennis</div>
+            <div class="word" id="sport1" onclick="connect('sport1')">Edgar Davids</div>
+            <div class="word" id="sport2" onclick="connect('sport2')">Filip Ude</div>
+            <div class="word" id="sport3" onclick="connect('sport3')">Nino Schurter</div>
         </div>
 
         <div id="images">
             <div class="image" id="image1" onclick="connect('image1')">
-                <img src="https://example.com/soccer.jpg" alt="Soccer">
+                <img src="https://cdn.britannica.com/96/1296-050-4A65097D/gelding-bay-coat.jpg">
             </div>
             <div class="image" id="image2" onclick="connect('image2')">
-                <img src="https://example.com/basketball.jpg" alt="Basketball">
+                <img src="https://m.media-amazon.com/images/I/51DT5KUxEoS.jpg" >
             </div>
             <div class="image" id="image3" onclick="connect('image3')">
-                <img src="https://example.com/tennis.jpg" alt="Tennis">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/SCOTT_LOGO_BLACK-sm.png">
             </div>
         </div>
     </div>
-
-    <button onclick="checkConnections()">Check Connections</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/2.15.5/js/jsplumb.min.js"></script>
     <script src="script.js"></script>

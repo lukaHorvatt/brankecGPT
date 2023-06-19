@@ -33,7 +33,7 @@
     height: 200px;
     border: 1px solid black;
     margin: 10px;
-    background-color: lightgreen;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@
 #modal button {
     width: 100px;
     height: 50px;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 #title {
@@ -71,11 +71,11 @@
 }
 
 #title h1 {
-    font-size: 30px;
+    font-size: 38px;
 }
 
 #title h2 {
-    font-size: 20px;
+    font-size: 28px;
 }body {
     font-size: 26px;
     font-weight: bold;
@@ -103,4 +103,18 @@
 
 #result h1 {
     margin: 10px;
+}
+
+
+#start-page {
+    text-align: center;
+}
+
+#start-page button {
+    font-size: 32px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
